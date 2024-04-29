@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background: var(--main);
+    margin: 0;
+}
+
+body > *, input, button, select {
+    font-family: "Poppins", monospace;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    font-family: "Poppins", monospace;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+:root {
+    --main: white;
+    --btn-hover: rgba(219, 219, 219, 0.5);
+    --header: rgb(60, 60, 60);
+    --submit-btn: rgb(141, 244, 116);
+    --submit-btn-hover: rgb(190, 253, 190);
+    --cancel-btn: rgb(244, 116, 116);
+    --cancel-btn-hover: rgb(253, 190, 190);
+    --btn-active: rgb(190, 190, 190);
+}
+
+.container {
+    width: 100%;
+    margin: 0;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+    background: var(--header);
+    color: white;
+}
+
+.pg-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    justify-content: center;
+    /* align-items: center; */
+    width: 100%;
+    /* height: 100%; */
+}
+
+.sidebar, .projects {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* border-top: 1px solid lightgray; */
+}
+
+.sidebar .today, .sidebar .this-week, .projects .proj-button, .add-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    height: 55px;
+    font-size: 20px;
+}
+.sidebar .today:hover, .sidebar .this-week:hover, .projects .proj-button:hover, .add-btn:hover {
+    background: var(--btn-hover);
+}
+
+.sidebar .today:active, .sidebar .this-week:active, .projects .proj-button:active, .add-btn:active {
+    background: var(--btn-active);
+}
+
+.task-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.tasks-container {
+    width: 100%;
+}
+
+.task-btn {
+    border: none;
+    font-size: 1em;
+    width: 100%;
+    height: 100%;
+    background: none;
+}
+
+.due-date {
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 100%;
+    border-left: 1px solid;
+}
+
+.task-closed-wrapper {
+    display: flex;
+    background: rgba(234, 234, 234, 0.409);
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    /* font-size: 20px; */
+    /* border-top: 1px solid lightgray; */
+    gap: 10px;
+}
+
+.task-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.proj-btn-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    border-top: 1px solid lightgray;
+}
+
+.add-task-btn {
+    background: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.add-task-btn:hover {
+    background: var(--btn-hover);
+}
+
+.proj-input-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.proj-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.proj-input {
+    /* width: 100%; */
+    height: 50px;
+    font-size: 20px;
+    background: rgba(211, 211, 211, 0.45);
+    border: none;
+    text-align: center;
+}
+
+.proj-submit-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.proj-submit {
+    width: 100%; 
+    height: 50px;
+    font-size: 1em;
+    background: rgb(141, 244, 116);
+    border: none;
+}  
+.proj-submit:hover {
+    background: rgb(190, 253, 190);
+}
+
+.proj-cancel {
+    width: 100%; 
+    height: 50px;
+    font-size: 1em;
+    background: rgb(244, 116, 116);
+    border: none;
+}
+.proj-cancel:hover {
+    background: var(--cancel-btn-hover)
+}
+
+.task-input, .date-input {
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.task-submit {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    background: rgb(120, 240, 120);
+    border: none;
+}
+
+.task-submit:hover {
+    background: rgb(167, 245, 167);
+}
+
+.task-cancel {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    background: rgb(240, 120, 120);
+    border: none;
+}
+
+.task-cancel:hover {
+    background: rgb(245, 167, 167);
+}
+
+.sidebar {
+    height: 100%;
+}
+
+.proj-remove-btn {
+    background: rgb(255, 134, 134);
+    border: none;
+}
+.proj-remove-btn:hover {
+    background: rgb(255, 190, 190);
+}
+
+.active-proj-button {
+    background: rgb(150, 255, 232);
+}
+
+.task-submit-cancel-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.priority-selector {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    background: rgba(250, 255, 94, 0.45);
+    border: none;
+    text-align: center;
+}
+
+.notes-input {
+    width: 100%;
+    height: 100px;
+    font-size: 20px;
+    background: rgba(236, 236, 236, 0.45);
+    border: none;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.task-remove-btn {
+    height: 100px;
+    width: 40px;
+    background: rgb(255, 134, 134);
+    border: none;
+}
+
+.task-remove-btn:hover {
+    background: rgb(255, 190, 190);
+}
+
+.task-priority {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    margin-right: 10px;
+    font-size: 20px;
+    background: rgba(250, 255, 94, 0.45);
+    border: none;
+}
+
+.task-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.task-notes {
+    color: gray;
+}
+
+.task-bottom-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
